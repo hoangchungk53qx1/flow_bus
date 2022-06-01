@@ -70,8 +70,8 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
                 groupId 'com.github.hoangchungk53qx1'
-                artifactId 'flow_bus'
-                version = android.defaultConfig.versionName // or manually '1.0'
+                artifactId 'flow_bus_core'
+                version = '1.0.3'
             }
         }
     }

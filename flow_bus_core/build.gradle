@@ -30,13 +30,13 @@ android {
         jvmTarget = '1.8'
         freeCompilerArgs = ['-opt-in=kotlin.RequiresOptIn']
     }
-    publishing {
-        singleVariant("release") {
-            // if you don't want sources/javadoc, remove these lines
-            withSourcesJar()
-            withJavadocJar()
-        }
-    }
+//    publishing {
+//        singleVariant("release") {
+//            // if you don't want sources/javadoc, remove these lines
+//            withSourcesJar()
+//            withJavadocJar()
+//        }
+//    }
 }
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
@@ -66,15 +66,15 @@ dependencies {
     implementation 'com.jakewharton.timber:timber:5.0.1'
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-                groupId 'com.github.hoangchungk53qx1'
-                artifactId 'flow_bus_core'
-                version = '1.0.4'
-            }
-        }
-    }
-}
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            release(MavenPublication) {
+//                from components.release
+//                groupId 'com.github.hoangchungk53qx1'
+//                artifactId 'flow_bus_core'
+//                version = '1.0.4'
+//            }
+//        }
+//    }
+//}

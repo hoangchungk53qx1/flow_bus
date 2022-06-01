@@ -1,4 +1,6 @@
 # flow_bus
+[![](https://jitpack.io/v/hoangchungk53qx1/flow_bus.svg)](https://jitpack.io/#hoangchungk53qx1/flow_bus)
+
 EventBus for Android, message bus, based on SharedFlow, has lifecycle awareness, supports Sticky, supports thread switching, and supports delayed sending.
 
 # inspiration is taken from eventbus lib.

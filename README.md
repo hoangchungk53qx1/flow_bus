@@ -1,10 +1,16 @@
 # flow_bus
 EventBus for Android, message bus, based on SharedFlow, has lifecycle awareness, supports Sticky, supports thread switching, and supports delayed sending.
 
-# Inspiration is taken from eventbus lib.
+# inspiration is taken from eventbus lib.
 
 # MIT License
 
+# implementation
+
+dependencies {
+	        implementation 'com.github.hoangchungk53qx1:flow_bus:1.0'
+	}
+  
 Copyright (c) 2022 hoangchungk53qx1
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

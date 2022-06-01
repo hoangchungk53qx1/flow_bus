@@ -62,7 +62,7 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
                 groupId 'com.github.hoangchungk53qx1'
-                artifactId 'flow_bus_core'
+                artifactId 'flow_bus'
                 version = '1.0.4'
             }
         }

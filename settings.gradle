@@ -13,6 +13,7 @@ dependencyResolutionManagement {
         maven { url 'https://jitpack.io' }
     }
 }
+enableFeaturePreview("VERSION_CATALOGS")
 rootProject.name = "flow_bus"
 include ':app'
 include ':flow_bus_core'

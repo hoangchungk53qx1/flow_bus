@@ -15,7 +15,7 @@ inline fun <reified T> LifecycleOwner.collectFlowBus(
     minActiveState: Lifecycle.State = Lifecycle.State.STARTED,
     isSticky: Boolean = false,
     noinline onReceived: (T) -> Unit
-) = ViewModelAppProvider.getApplicationScope(FlowBusViewModel::class.java).collectFlowBus(
+) : Job = ViewModelAppProvider.getApplicationScope(FlowBusViewModel::class.java).collectFlowBus(
     lifecycleOwner = this,
     eventName = T::class.java.name,
     minState = minActiveState,

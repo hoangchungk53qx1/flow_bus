@@ -3,17 +3,55 @@
 
 EventBus for Android, message bus, based on SharedFlow, has lifecycle awareness, supports Sticky, supports thread switching, and supports delayed sending.
 
-# inspiration is taken from eventbus lib.
+---|---|---|---|---|---|---
+EventBus | ❌ | ✅ | ✅ | ❌ | ❌ | ✅
+RxBus | ❌ | ✅ | ✅ | ❌ | ❌ | ✅
+LiveEventBus | ✅ | ✅ | ✅ | ✅ | ✅ | ❌
+Flow_Bus| ✅ | ✅ | ✅ | ✅ |❌| ✅ | 
 
-# MIT License
+# MoreInfo
 
-# implementation
+Check it out😄
 
-dependencies {
-	        implementation 'com.github.hoangchungk53qx1:flow_bus:1.0'
+[kotlinx.coroutines.flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/index.html)
+
+
+# Install
+Add it in your root build.gradle at the end of repositories:
+```
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
 	}
-  
-Copyright (c) 2022 hoangchungk53qx1
+```
+Step 2. Add the dependency
+```
+dependencies {
+	  dependencies {
+	        implementation 'com.github.hoangchungk53qx1:flow_bus:Tag'
+	}
+```
+
+
+Step 3. Init
+
+```kotlin
+class ApplicationFlowBus : Application() {
+  override fun onCreate() {
+    super.onCreate()
+    FlowBusInitApplication.initializer(this)
+  }
+}
+```
+
+
+### License
+```
+MIT License
+
+Copyright (c) 2021 hoangchungk53qx1
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -32,3 +70,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+```

@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'maven-publish'
 }
+group = 'com.github.jitpack'
 
 android {
     compileSdk 32
@@ -71,7 +72,7 @@ afterEvaluate {
                 from components.release
                 groupId 'com.github.hoangchungk53qx1'
                 artifactId 'flow_bus_core'
-                version = '1.0.3'
+                version = '1.0.4'
             }
         }
     }

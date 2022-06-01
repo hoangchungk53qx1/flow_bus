@@ -3,7 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'maven-publish'
 }
-group = 'com.github.jitpack'
+group = 'com.github.hoangchungk53qx1'
 
 android {
     compileSdk 32
@@ -37,16 +37,6 @@ android {
 //            withJavadocJar()
 //        }
 //    }
-}
-
-tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
-        freeCompilerArgs += [
-                '-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi',
-                '-Xopt-in=kotlin.contracts.ExperimentalContracts',
-        ]
-    }
 }
 
 dependencies {

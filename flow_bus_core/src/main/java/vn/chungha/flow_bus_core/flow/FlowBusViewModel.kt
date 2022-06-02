@@ -4,12 +4,9 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.delay
+import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
 import timber.log.Timber
 import vn.chungha.flow_bus_core.lifecycle.launchWhenStateAtLeast
 
@@ -88,6 +85,7 @@ class FlowBusViewModel : ViewModel() {
 
     fun removeStickyEvent(stickyEvent: String) = stickyEventFlows.remove(stickyEvent)
 
+    @OptIn(ExperimentalCoroutinesApi::class)
     fun clearStickyEvent(stickyEvent: String) = stickyEventFlows[stickyEvent]?.resetReplayCache()
 
     @Suppress("UNCHECKED_CAST")

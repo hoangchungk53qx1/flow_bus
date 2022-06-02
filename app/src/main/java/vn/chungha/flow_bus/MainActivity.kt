@@ -1,5 +1,6 @@
 package vn.chungha.flow_bus
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import timber.log.Timber
@@ -14,11 +15,32 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.postLayout.setOnClickListener {
-            busEvent(GlobalEvent("HelloWorld"))
+        bindSecondFragment()
+        binding.gotoThirdScreen.setOnClickListener {
+            startActivity(Intent(this, ThirdActivity::class.java))
         }
+        sendFlowBus()
+        observeGlobal()
+    }
+
+    private fun sendFlowBus() {
+        binding.sendGlobal.setOnClickListener {
+            busEvent(GlobalEvent("Hello from MainActivity"))
+        }
+    }
+
+    private fun observeGlobal() {
         collectFlowBus<GlobalEvent> {
-            Timber.tag("TAG").d("MainActivity received GlobalEvent  :%s", it.name)
+            Timber.tag(TAG).d("MainActivity received GlobalEvent  :%s", it.name)
         }
+    }
+
+    private fun bindSecondFragment() {
+        supportFragmentManager.beginTransaction().replace(R.id.fragment, SecondFragment())
+            .commitAllowingStateLoss()
+    }
+
+    companion object {
+        private const val TAG = "MainActivity"
     }
 }

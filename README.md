@@ -24,7 +24,7 @@ Step 2. Add the dependency
 ```
 dependencies {
 	  dependencies {
-	        implementation 'com.github.hoangchungk53qx1:flow_bus:Tag'
+	        implementation 'com.github.hoangchungk53qx1:flow_bus:1.10.3'
 	}
 ```
 

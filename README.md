@@ -23,8 +23,9 @@ allprojects {
 Step 2. Add the dependency
 ```
 dependencies {
-	  implementation 'com.github.hoangchungk53qx1:flow_bus:1.10.3'
-}
+	  dependencies {
+	        implementation 'com.github.hoangchungk53qx1:flow_bus:1.10.3'
+	}
 ```
 
 

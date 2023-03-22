@@ -9,8 +9,6 @@ import vn.chungha.flow_bus_core.FlowBusInitApplication
 object ViewModelAppProvider : ViewModelStoreOwner {
     private val eventViewModel: ViewModelStore = ViewModelStore()
 
-    override fun getViewModelStore(): ViewModelStore = eventViewModel
-
     private val applicationProvider: ViewModelProvider by lazy {
         ViewModelProvider(
             ViewModelAppProvider,
@@ -19,6 +17,8 @@ object ViewModelAppProvider : ViewModelStoreOwner {
     }
 
     fun <T : ViewModel> getApplicationScope(model: Class<T>): T = applicationProvider[model]
+    override val viewModelStore: ViewModelStore
+        get() = eventViewModel
 
 }
 

@@ -14,6 +14,9 @@ inline fun <reified T> getFlowCollectCount(event: Class<T>): Int =
 inline fun <reified T> getFlowCollectCountScope(scope: ViewModelStoreOwner, event: Class<T>) =
     ViewModelProvider(scope)[FlowBusViewModel::class.java].getEventObserverCount(event.name)
 
+/**
+ * repeatOnLifecycle
+ */
 fun <T> LifecycleOwner.launchWhenStateAtLeast(
     minState: Lifecycle.State,
     block: suspend CoroutineScope.() -> T

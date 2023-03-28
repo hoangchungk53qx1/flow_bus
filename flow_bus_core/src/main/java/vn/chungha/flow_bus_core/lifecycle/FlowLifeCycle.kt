@@ -18,5 +18,7 @@ fun <T> LifecycleOwner.launchWhenStateAtLeast(
     minState: Lifecycle.State,
     block: suspend CoroutineScope.() -> T
 ): Job = lifecycleScope.launch {
-    lifecycle.whenStateAtLeast(minState, block)
+    lifecycle.repeatOnLifecycle(minState) {
+        block()
+    }
 }

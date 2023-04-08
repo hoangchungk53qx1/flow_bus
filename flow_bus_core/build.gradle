@@ -1,9 +1,11 @@
+import com.vanniktech.maven.publish.SonatypeHost
+
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'maven-publish'
+    id "com.vanniktech.maven.publish"
 }
-group = 'com.github.hoangchungk53qx1'
 
 android {
     compileSdk 33
@@ -33,13 +35,7 @@ android {
     kotlin.sourceSets.all {
 //        languageSettings.useExperimentalAnnotation("kotlin.RequiresOptIn")
     }
-    publishing {
-        singleVariant("release") {
-            // if you don't want sources/javadoc, remove these lines
-            withSourcesJar()
-            withJavadocJar()
-        }
-    }
+
 }
 
 dependencies {
@@ -68,4 +64,8 @@ afterEvaluate {
             }
         }
     }
+}
+mavenPublishing {
+    publishToMavenCentral(SonatypeHost.S01, true)
+    signAllPublications()
 }

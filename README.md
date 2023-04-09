@@ -12,10 +12,12 @@ Check it out😄
 
 # Install
 Add it in your root build.gradle at the end of repositories:
+
 ```
 allprojects {
 		repositories {
 			...
+			mavenCentral()
 			maven { url 'https://jitpack.io' }
 		}
 	}
@@ -23,9 +25,8 @@ allprojects {
 Step 2. Add the dependency
 ```
 dependencies {
-	  dependencies {
-	        implementation 'com.github.hoangchungk53qx1:flow_bus:1.12.0'
-	}
+	implementation 'io.github.hoangchungk53qx1:flow-bus:1.12.1'
+}
 ```
 
 

@@ -6,7 +6,7 @@
     <string name="send_event_sticky">send event sticky to third screen</string>
     <string name="main_activity">Main Activity</string>
     <string name="go_to_third_screen">go to third screen</string>
-    <string name="send_from_activity">send global from Activity</string>
+    <string name="send_from_activity">send global from Activity to Third Screen</string>
     <string name="send_sticky_from_activity">send sticky from Activity</string>
     <string name="third_screen">Third Screen</string>
 </resources>

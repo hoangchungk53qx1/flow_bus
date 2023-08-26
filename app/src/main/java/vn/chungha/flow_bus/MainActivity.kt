@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun sendFlowBus() {
         binding.sendGlobal.setOnClickListener {
-            busEvent(GlobalEvent("Hello from MainActivity"))
+            busEvent(GlobalEvent("Hello from MainActivity with GlobalEvent"))
         }
     }
 

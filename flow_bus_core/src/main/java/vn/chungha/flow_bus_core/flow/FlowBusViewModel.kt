@@ -89,7 +89,7 @@ class FlowBusViewModel : ViewModel() {
     fun clearStickyEvent(stickyEvent: String) = stickyEventFlows[stickyEvent]?.resetReplayCache()
 
     @Suppress("UNCHECKED_CAST")
-    fun <T : Any> invokeReceived(value: Any, onReceived: (T) -> Unit) {
+    private fun <T : Any> invokeReceived(value: Any, onReceived: (T) -> Unit) {
         try {
             onReceived.invoke(value as T)
         } catch (e: ClassCastException) {
